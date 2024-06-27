@@ -43,6 +43,7 @@ try:
 
             elif next_step == 2:
                 try:
+                    # Поиск ссылок на связанные основные статьи на странице
                     hatnotes = []
                     for element in browser.find_elements(By.TAG_NAME, "div"):
                         cl = element.get_attribute("class")
@@ -73,7 +74,8 @@ try:
                         if href and class_name == "mv-redirect":
                             article_links.append(href)
 
-                        # Проверка, что ссылка ведет на другую статью и не является ссылкой на примечания
+                        # При условии, что class отсутствует (а таких ссылок большинство):
+                        # проверка, что ссылка ведет на другую статью и не является ссылкой на примечания
                         # или другие неподходящие ссылки
                         if href and not class_name:
                             if href.startswith("https://ru.wikipedia.org/wiki/") and "Служебная:" not in href:
