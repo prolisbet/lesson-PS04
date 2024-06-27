@@ -25,3 +25,5 @@ hatnote = random.choice(hatnotes)
 link = hatnote.find_element(By.TAG_NAME, "a").get_attribute("href")
 browser.get(link)
 time.sleep(5)
+
+input()  # управление остановкой программы в Chrome

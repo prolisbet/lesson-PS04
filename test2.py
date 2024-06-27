@@ -15,4 +15,5 @@ search_box.send_keys(Keys.RETURN)
 time.sleep(5)
 a = browser.find_element(By.LINK_TEXT, "Солнечная система")
 a.click()
-time.sleep(5)
+# time.sleep(5)
+input()  # управление остановкой программы в Chrome
